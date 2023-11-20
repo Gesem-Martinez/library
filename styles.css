@@ -1,0 +1,40 @@
+html{
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 80%;
+    margin: 20px auto;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 150px;
+}
+
+.book-form{
+    border: 2px solid black;
+    border-radius: 8px;
+
+    padding: 20px 30px;
+}
+
+.form-label{
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+input{
+    height: 15px;
+    width: calc(100% - 20px);
+
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 1rem;
+
+    border-radius: 8px;
+    border: 2px solid black;
+}

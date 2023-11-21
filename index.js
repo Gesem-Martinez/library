@@ -7,15 +7,12 @@ function Book(title, author, pages, hasBeenRead){
     this.hasBeenRead = hasBeenRead;
 
     this.info = function(){
-        return `${this.title} by ${this.author}, ${this.pages} pages.`
-        //return this.title + " by " + this.author + ", " + this.pages + " pages.";
-    }
+        return this.title + " by " + this.author + ", " + this.pages + " pages.";
+    };
 }
 
 function addBookToLibrary(newBook){
-    if(newBook instanceof Book){
-        libraryArray.push(newBook);
-    }
+    libraryArray.push(newBook);
 }
 
 function createBookEntry(book){
@@ -36,13 +33,14 @@ function createBookEntry(book){
     changeReadStateButton.classList.add("black-border");
 
     bookTitle.textContent = book.info();
-    if(book.hasBeenRead){
+    if(book.hasBeenRead == "true"){
         bookReadState.textContent = "Already Read";
         bookReadState.classList.add("already-read");
     } else {
         bookReadState.textContent = "Not read yet";
         bookReadState.classList.add("not-read");
     }
+    bookReadState.classList.add("book-read-state");
     bookTitle.appendChild(lineBreak);
     bookTitle.appendChild(bookReadState);
     
@@ -59,7 +57,24 @@ function displayBooks(){
     if(libraryArray.length == 0){
         return ;
     }
-    for(let book in libraryArray){
 
+    const bookDisplay = document.querySelector(".book-display");
+
+    for(let book of libraryArray){
+        let entry = createBookEntry(book);
+        bookDisplay.appendChild(entry);
     }
 }
+
+const bookTitleEntry = document.querySelector("#title");
+const bookAuthorEntry = document.querySelector("#author");
+const bookPagesEntry = document.querySelector("#pages");
+const bookReadStateEntry = document.querySelector("#readState");
+
+const newBookButton = document.querySelector(".submit-button");
+newBookButton.addEventListener('click', (event) =>{
+    let newEntry = new Book(bookTitleEntry.value, bookAuthorEntry.value, bookPagesEntry.value, bookReadStateEntry.value);
+    addBookToLibrary(newEntry);
+    displayBooks();
+    event.preventDefault();
+}, false);

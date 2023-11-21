@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,39 +10,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
-        <form action="#" class="book-form black-border">
-            <h1>Add a New Book:</h1>
+        <div>
+            <form action="#" class="book-form black-border">
+                <h1>Add a New Book:</h1>
 
-            <div>
-                <label for="title" class="form-label">Title:</label>
-                <input class="black-border" type="text" id="title" name="book_title">
-            </div>
+                <div>
+                    <label for="title" class="form-label">Title:</label>
+                    <input class="black-border" type="text" id="title" name="book_title">
+                </div>
 
-            <div>
-                <label for="author" class="form-label">Author:</label>
-                <input class="black-border" type="text" id="author" name="book_author">
-            </div>
+                <div>
+                    <label for="author" class="form-label">Author:</label>
+                    <input class="black-border" type="text" id="author" name="book_author">
+                </div>
 
-            <div>
-                <label for="pages" class="form-label">Pages:</label>
-                <input class="black-border" type="number" id="pages" name="book_pages">
-            </div>
+                <div>
+                    <label for="pages" class="form-label">Pages:</label>
+                    <input class="black-border" type="number" id="pages" name="book_pages">
+                </div>
 
-            <div>
-                <label for="readState" class="form-label">Already read?:</label>
-                <input class="black-border" type="text" id="readState" name="book_readState">
-            </div>
+                <div>
+                    <label for="readState" class="form-label">Already read?:</label>
+                    <input class="black-border" type="text" id="readState" name="book_readState">
+                </div>
 
-            <button type="submit" class="submit-button black-border">Add New Book</button>
-        </form>
+                <button type="submit" class="submit-button black-border">Add New Book</button>
+            </form>
+        </div>
 
         <div class="book-display">
             <h2 class="library-title">Library:</h2>
-            
+
             <div class="book-entry black-border">
-                <h2 class="book-title">The Godfather by Mario Puzzo, 600 pages. <br><span class="book-read-state">Not read yet</span></h2>
+                <h2 class="book-title">The Godfather by Mario Puzzo, 600 pages. <br><span class="book-read-state">Not
+                        read yet</span></h2>
                 <div class="book-entry-buttons">
                     <button class="remove-entry black-border"></button>
                     <button class="change-read-state black-border"></button>
@@ -49,7 +54,8 @@
             </div>
 
             <div class="book-entry black-border">
-                <h2 class="book-title">The Godfather by Mario Puzzo, 600 pages. <br><span class="book-read-state">Not read yet</span></h2>
+                <h2 class="book-title">The Godfather by Mario Puzzo, 600 pages. <br><span class="book-read-state">Not
+                        read yet</span></h2>
                 <div class="book-entry-buttons">
                     <button class="remove-entry black-border"></button>
                     <button class="change-read-state black-border"></button>
@@ -59,4 +65,5 @@
     </div>
     <script src="index.js"></script>
 </body>
+
 </html>

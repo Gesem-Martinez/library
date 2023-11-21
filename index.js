@@ -125,10 +125,18 @@ function entryButtonsListeners(btn, func, target){
     }
 }
 
+function clearInputs(inputElements){
+    for(let input of inputElements){
+        input.value = "";
+    }
+}
+
 const bookTitleEntry = document.querySelector("#title");
 const bookAuthorEntry = document.querySelector("#author");
 const bookPagesEntry = document.querySelector("#pages");
 const bookReadStateEntry = document.querySelector("#readState");
+
+const inputElements = [bookTitleEntry, bookAuthorEntry, bookPagesEntry, bookReadStateEntry];
 
 const newBookButton = document.querySelector(".submit-button");
 newBookButton.addEventListener('click', (event) =>{
@@ -137,5 +145,6 @@ newBookButton.addEventListener('click', (event) =>{
         addBookToLibrary(newEntry);
         displayBooks();
     }
+    clearInputs(inputElements);
     event.preventDefault();
 }, false);

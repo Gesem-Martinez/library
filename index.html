@@ -11,38 +11,47 @@
 </head>
 <body>
     <div class="container">
-        <form action="#" class="book-form">
+        <form action="#" class="book-form black-border">
             <h1>Add a New Book:</h1>
 
             <div>
                 <label for="title" class="form-label">Title:</label>
-                <input type="text" id="title" name="book_title">
+                <input class="black-border" type="text" id="title" name="book_title">
             </div>
 
             <div>
                 <label for="author" class="form-label">Author:</label>
-                <input type="text" id="author" name="book_author">
+                <input class="black-border" type="text" id="author" name="book_author">
             </div>
 
             <div>
                 <label for="pages" class="form-label">Pages:</label>
-                <input type="number" id="pages" name="book_pages">
+                <input class="black-border" type="number" id="pages" name="book_pages">
             </div>
 
             <div>
                 <label for="readState" class="form-label">Already read?:</label>
-                <input type="text" id="readState" name="book_readState">
+                <input class="black-border" type="text" id="readState" name="book_readState">
             </div>
 
             <button type="">Add New Book</button>
         </form>
 
         <div class="book-display">
-            <div class="book-entry">
+            <h2 class="library-title">Library:</h2>
+            <div class="book-entry black-border">
                 <h2 class="book-title">The Godfather by Mario Puzzo, 600 pages. <br><span class="book-read-state">Not read yet</span></h2>
                 <div class="book-entry-buttons">
-                    <button class="remove-entry"></button>
-                    <button class="change-read-state"></button>
+                    <button class="remove-entry black-border"></button>
+                    <button class="change-read-state black-border"></button>
+                </div>
+            </div>
+
+            <div class="book-entry black-border">
+                <h2 class="book-title">The Godfather by Mario Puzzo, 600 pages. <br><span class="book-read-state">Not read yet</span></h2>
+                <div class="book-entry-buttons">
+                    <button class="remove-entry black-border"></button>
+                    <button class="change-read-state black-border"></button>
                 </div>
             </div>
         </div>

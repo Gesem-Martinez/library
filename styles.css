@@ -4,19 +4,23 @@ html{
     box-sizing: border-box;
 }
 
+
+/* GENERAL STYLES */
+.black-border{
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
 .container{
     width: 80%;
     margin: 20px auto;
 
     display: grid;
     grid-template-columns: 1fr 3fr;
-    gap: 150px;
+    gap: 100px;
 }
 
 .book-form{
-    border: 2px solid black;
-    border-radius: 8px;
-
     padding: 20px 30px;
 }
 
@@ -34,7 +38,57 @@ input{
     margin-bottom: 20px;
     padding: 10px;
     font-size: 1rem;
+}
 
-    border-radius: 8px;
-    border: 2px solid black;
+
+.library-title{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.book-display{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.book-entry{
+    padding: 10px 20px 5px 20px;
+    margin: 0;
+    line-height: 3rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.book-read-state{
+    font-size: 1rem;
+    font-weight: 700;
+
+    padding: 3px 9px;
+
+    background-color: darkred;
+    color: white;
+    border-radius: calc((1rem + 6px) / 2);
+}
+
+.book-entry  button{
+    min-width: 70px;
+    height: 70px;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.remove-entry{
+    background-color: red;
+    background-image: url(./images/trash-icon.svg);
+}
+
+.change-read-state{
+    margin-left: 20px;
+    background-image: url(./images/eye-icon-black.svg);
 }

@@ -11,7 +11,23 @@ function Book(title, author, pages, hasBeenRead){
     };
 }
 
+function doesBookExists(title, author){
+    for(let book of libraryArray){
+        if(book.title == title && book.author == author){
+            return true;
+        }
+    }
+
+    return false;
+}
+
 function addBookToLibrary(newBook){
+    for(let key in newBook){
+        if(newBook[key] == ""){
+            return;
+        }
+    }
+
     libraryArray.push(newBook);
 }
 
@@ -59,6 +75,7 @@ function displayBooks(){
     }
 
     const bookDisplay = document.querySelector(".book-display");
+    bookDisplay.innerHTML = '';
 
     for(let book of libraryArray){
         let entry = createBookEntry(book);
@@ -73,8 +90,10 @@ const bookReadStateEntry = document.querySelector("#readState");
 
 const newBookButton = document.querySelector(".submit-button");
 newBookButton.addEventListener('click', (event) =>{
-    let newEntry = new Book(bookTitleEntry.value, bookAuthorEntry.value, bookPagesEntry.value, bookReadStateEntry.value);
-    addBookToLibrary(newEntry);
-    displayBooks();
+    if(!doesBookExists(bookTitleEntry.value, bookAuthorEntry.value)){
+        let newEntry = new Book(bookTitleEntry.value, bookAuthorEntry.value, bookPagesEntry.value, bookReadStateEntry.value);
+        addBookToLibrary(newEntry);
+        displayBooks();
+    }
     event.preventDefault();
 }, false);

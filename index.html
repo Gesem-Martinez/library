@@ -34,7 +34,11 @@
 
                 <div>
                     <label for="readState" class="form-label">Already read?:</label>
-                    <input class="black-border" type="text" id="readState" name="book_readState" required>
+                    <select name="book_readState" id="readState" class="black-border">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
                 </div>
 
                 <button type="submit" class="submit-button black-border">Add New Book</button>
@@ -44,17 +48,6 @@
         <div>
             <h2 class="library-title">Library:</h2>
             <div class="book-display">
-
-                <!--
-                <div class="book-entry black-border">
-                    <h2 class="book-title">The Godfather by Mario Puzzo, 600 pages. <br><span class="book-read-state">Not
-                            read yet</span></h2>
-                    <div class="book-entry-buttons">
-                        <button class="remove-entry black-border"></button>
-                        <button class="change-read-state black-border"></button>
-                    </div>
-                </div>
-                -->
             </div>
         </div>
     </div>

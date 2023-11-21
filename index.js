@@ -1,4 +1,4 @@
-const libraryArray = [];
+let libraryArray = [];
 
 function Book(title, author, pages, hasBeenRead){
     this.title = title;
@@ -65,21 +65,63 @@ function createBookEntry(book){
 
     bookEntry.appendChild(bookTitle);
     bookEntry.appendChild(entryButtonsDiv);
-
+    bookEntry.setAttribute("data-index", libraryArray.indexOf(book));
+    
+    entryButtonsListeners(removeEntryButton, "remove", bookEntry);
+    entryButtonsListeners(changeReadStateButton, "change", [book, bookReadState]);
     return bookEntry;
 }
 
 function displayBooks(){
+    const bookDisplay = document.querySelector(".book-display");
+    bookDisplay.innerHTML = '';
     if(libraryArray.length == 0){
         return ;
     }
 
-    const bookDisplay = document.querySelector(".book-display");
-    bookDisplay.innerHTML = '';
-
     for(let book of libraryArray){
         let entry = createBookEntry(book);
         bookDisplay.appendChild(entry);
+    }
+}
+
+function removeEntry(entry){
+    let entryIndex = Number(entry.getAttribute("data-index"));
+    libraryArray = libraryArray.slice(0, entryIndex).concat(libraryArray.slice(entryIndex + 1));
+}
+
+function toggleReadState(book, stateLabel){
+    let newState = "false";
+    if(book.hasBeenRead == "true"){
+        stateLabel.textContent = "Not read yet";
+
+        stateLabel.classList.remove("already-read");
+        stateLabel.classList.add("not-read");
+    } else {
+        stateLabel.textContent = "Already Read";
+
+        stateLabel.classList.remove("not-read");
+        stateLabel.classList.add("already-read");
+
+        newState = "true";
+    }
+
+    book.hasBeenRead = newState;
+}
+
+function entryButtonsListeners(btn, func, target){
+
+    if(func == "remove"){
+        btn.addEventListener('click', (event) => {
+            removeEntry(target);
+            displayBooks();
+        });
+    }
+
+    if(func == "change"){
+        btn.addEventListener('click', (event) => {
+            toggleReadState(target[0], target[1]);
+        });
     }
 }
 

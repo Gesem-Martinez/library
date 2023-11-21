@@ -11,6 +11,7 @@ html{
     border-radius: 8px;
 }
 
+/* MAIN CONTAINER */
 .container{
     width: 80%;
     margin: 20px auto;
@@ -20,6 +21,7 @@ html{
     gap: 100px;
 }
 
+/* BOOK FORM */
 .book-form{
     padding: 20px 30px;
 }
@@ -40,7 +42,16 @@ input{
     font-size: 1rem;
 }
 
+.submit-button{
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    margin-top: 10px;
+    width: 100%;
+    background-color: #42caa4;
+}
 
+/* BOOKS DISPLAY */
 .library-title{
     font-size: 3rem;
     margin-bottom: 20px;
@@ -52,7 +63,7 @@ input{
     gap: 20px;
 }
 
-
+/* BOOK ENTRY CLASSES */
 .book-entry{
     padding: 10px 20px 5px 20px;
     margin: 0;
@@ -70,9 +81,17 @@ input{
 
     padding: 3px 9px;
 
+    border-radius: calc((1rem + 6px) / 2);
+}
+
+.not-read{
     background-color: darkred;
     color: white;
-    border-radius: calc((1rem + 6px) / 2);
+}
+
+.alrady-read{
+    background-color: #42caa4;
+    color: black;
 }
 
 .book-entry  button{
